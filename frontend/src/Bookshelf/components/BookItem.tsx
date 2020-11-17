@@ -2,7 +2,7 @@ import React from "react";
 import Book from "../model/Book";
 
 const BookItem = ({ title, author }: Book) => (
-  <div>
+  <div className="bookshelf-book">
     {title} ({author})
   </div>
 );
