@@ -1,6 +1,5 @@
-import * as faker from "faker";
-
 import BookshelfPageObject from "../../pageobjects/BookshelfPageObject";
+import fakeData from "../../pageobjects/BookshelfFakeData";
 
 describe("bookshelf", () => {
   let pageObject;
@@ -10,8 +9,8 @@ describe("bookshelf", () => {
   });
 
   it("add a new book", () => {
-    const title = faker.lorem.sentence();
-    const author = `${faker.name.firstName()} ${faker.name.lastName()}`;
+    const title = fakeData.generateTitle();
+    const author = fakeData.generateAuthor();
 
     pageObject.open();
     pageObject.fillForm(title, author);
