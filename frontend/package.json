@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@types/faker": "^5.1.4",
-    "faker": "^5.1.0"
+    "faker": "^5.1.0",
+    "fast-check": "^2.7.0"
   }
 }
