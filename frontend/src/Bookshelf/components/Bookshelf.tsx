@@ -4,16 +4,17 @@ import {
   retrieveLibraryContents,
   addBookToLibrary,
 } from "../services/BookshelfService";
+
 import Book from "../model/Book";
 
 import BookList from "./BookList";
 import NewBookForm from "./NewBookForm";
 
-const BookShelf = () => {
+const Bookshelf = () => {
   const [books, setBooks] = useState([] as Book[]);
 
   useEffect(() => {
-    retrieveLibraryContents().then(setBooks);
+    retrieveLibraryContents().then((books) => setBooks(books));
   }, [books]);
 
   async function addBook(book: Book) {
@@ -30,4 +31,4 @@ const BookShelf = () => {
   );
 };
 
-export default BookShelf;
+export default Bookshelf;

@@ -2,16 +2,11 @@ import BookshelfPageObject from "../../pageobjects/BookshelfPageObject";
 import fakeData from "../../pageobjects/BookshelfFakeData";
 
 describe("bookshelf", () => {
-  let pageObject;
-
-  beforeEach(() => {
-    pageObject = new BookshelfPageObject(cy);
-  });
-
   it("add a new book", () => {
     const title = fakeData.generateTitle();
     const author = fakeData.generateAuthor();
 
+    let pageObject = new BookshelfPageObject(cy);
     pageObject.open();
     pageObject.fillForm(title, author);
     pageObject.submitForm();

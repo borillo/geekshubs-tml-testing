@@ -8,8 +8,8 @@ interface BookLisProps {
 
 const BookList = ({ books }: BookLisProps) => (
   <div>
-    {books.map((book) => (
-      <BookItem key={book.title} {...book} />
+    {books.map((book, index) => (
+      <BookItem key={index} {...book} />
     ))}
   </div>
 );
