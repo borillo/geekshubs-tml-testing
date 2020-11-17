@@ -1,10 +1,10 @@
 import React from "react";
 import Book from "../model/Book";
 
-const BookshelfItem = ({ title, author }: Book) => (
+const BookItem = ({ title, author }: Book) => (
   <div>
     {title} ({author})
   </div>
 );
 
-export default BookshelfItem;
+export default BookItem;

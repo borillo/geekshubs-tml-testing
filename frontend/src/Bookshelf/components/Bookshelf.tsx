@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { retrieveLibraryContents } from "../services/BookshelfService";
+
+import {
+  retrieveLibraryContents,
+  addBookToLibrary,
+} from "../services/BookshelfService";
 import Book from "../model/Book";
-import BookshelfItem from "./BookshelfItem";
+
+import BookList from "./BookList";
+import NewBookForm from "./NewBookForm";
 
 const BookShelf = () => {
   const [books, setBooks] = useState([] as Book[]);
 
   useEffect(() => {
-    retrieveLibraryContents().then((books) => setBooks(books));
-  });
+    retrieveLibraryContents().then(setBooks);
+  }, [books]);
+
+  async function addBook(book: Book) {
+    addBookToLibrary(book).then(() => setBooks([...books, book]));
+  }
 
   return (
     <div>
       <h1>Bookshelf contents:</h1>
-      {books.map((book) => (
-        <BookshelfItem {...book} />
-      ))}
+
+      <BookList books={books} />
+      <NewBookForm onNewBook={addBook} />
     </div>
   );
 };
