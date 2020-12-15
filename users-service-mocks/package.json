@@ -1,0 +1,11 @@
+{
+  "name": "users-service-mocks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}

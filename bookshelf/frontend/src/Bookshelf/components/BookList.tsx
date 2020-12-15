@@ -7,7 +7,7 @@ interface BookLisProps {
 }
 
 const BookList = ({ books }: BookLisProps) => (
-  <div>
+  <div className="bookshelf-booklist">
     {books.map((book, index) => (
       <BookItem key={index} {...book} />
     ))}

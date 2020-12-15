@@ -22,7 +22,7 @@ const Bookshelf = () => {
   }
 
   return (
-    <div>
+    <div className="bookshelf">
       <h1>Bookshelf contents:</h1>
 
       <BookList books={books} />
