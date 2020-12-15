@@ -6,7 +6,7 @@ describe("Gilded Rose", () => {
   it("should update quality", () => {
     expect(doUpdateQuality).toVerifyAllCombinations(
       [
-        "foo",
+        "",
         "Aged Brie",
         "Backstage passes to a TAFKAL80ETC concert",
         "Sulfuras, Hand of Ragnaros",
