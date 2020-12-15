@@ -29,3 +29,5 @@ jobs:
           npm ci
           npm test     
         working-directory: ./users-service-mocks
+        env:
+          CI: true
