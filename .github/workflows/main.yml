@@ -1,4 +1,5 @@
-name: CI
+name: users-service-mocks
+
 on:
   push:
     branches: [ master ]
