@@ -31,7 +31,6 @@ jobs:
         working-directory: ./bookshelf/frontend
 
       - name: Run acceptance tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
-          start: npm start
           working-directory: ./bookshelf/acceptance-testing
