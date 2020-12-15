@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:ci": "CI=true jest",
+    "test:mutate": "stryker run --mutate gilded-rose.js"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^4.2.0",
