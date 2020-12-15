@@ -27,8 +27,11 @@ jobs:
       - name: Build and start frontend
         run: |
           npm ci
+          npm test
           npm start & npx wait-on http://localhost:3000
         working-directory: ./bookshelf/frontend
+        env:
+          CI: true
 
       - name: Run acceptance tests
         uses: cypress-io/github-action@v2
