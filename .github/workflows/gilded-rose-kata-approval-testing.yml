@@ -1,0 +1,33 @@
+name: gilded-rose-kata-approval-testing
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Run unit tests
+        run: |
+          npm ci
+          npm test     
+        working-directory: ./gilded-rose-kata-approval-testing
+        env:
+          CI: true
