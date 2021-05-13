@@ -2,6 +2,7 @@ class UserRepository {
   constructor() {}
 
   async persist(user) {
+    throw new Error("Bomb!!");
     return Promise.resolved(user);
   }
 
