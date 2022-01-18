@@ -51,7 +51,7 @@ import { cleanup, screen } from "@testing-library/react";
 
 import Bookshelf from "../components/Bookshelf";
 import BookshelfPageObject from "../pageobjects/BookshelfPageObject";
-import fakeData from "../pageobjects/BookshelfFaeData";
+import fakeData from "../pageobjects/BookshelfFakeData";
 
 afterEach(cleanup);
 
