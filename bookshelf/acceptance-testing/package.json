@@ -1,20 +1,18 @@
 {
-  "name": "acceptance-testing",
+  "name": "bookshelf-acceptance-testing",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "cypress run",
     "cypress": "cypress open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-cypress": "^3.21.0",
-    "@types/faker": "^5.5.4",
-    "cypress": "^7.2.0",
-    "faker": "^5.5.3",
-    "typescript": "^4.2.4"
+    "@applitools/eyes-cypress": "^3.23.5",
+    "@types/faker": "^5.5.9",
+    "cypress": "^9.2.1",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.3"
   }
 }
