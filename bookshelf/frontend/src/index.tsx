@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
 import Bookshelf from "./Bookshelf/components/Bookshelf";
 
@@ -19,9 +19,9 @@ const App = () => (
       </ul>
     </nav>
 
-    <Switch>
-      <Route path="/bookshelf" component={Bookshelf} />
-    </Switch>
+    <Routes>
+      <Route path="/bookshelf" element={<Bookshelf />} />
+    </Routes>
   </>
 );
 
