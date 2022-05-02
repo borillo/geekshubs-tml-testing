@@ -1,18 +1,18 @@
 const { User } = require("../model/user");
 
-function buildUser(dni) {
+function withRegularUser(dni) {
   const user = new User(dni);
   return user;
 }
 
-function buildRegisteredUser(dni) {
-  const user = buildUser(dni);
+function withRegisteredUser(dni) {
+  const user = withRegularUser(dni);
   user.register();
 
   return user;
 }
 
 module.exports = {
-  buildUser,
-  buildRegisteredUser,
+  withRegularUser,
+  withRegisteredUser,
 };
