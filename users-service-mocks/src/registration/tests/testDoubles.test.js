@@ -3,7 +3,7 @@ jest.mock("../repositories/userRepository");
 const { UserRepository } = require("../repositories/userRepository");
 const { UserService } = require("../services/userService");
 
-const { buildUser, buildRegisteredUser } = require("./user.builder");
+const { withRegisteredUser, withRegularUser } = require("./user.mother");
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -13,7 +13,7 @@ describe("Test doubles", () => {
   describe("Mocks", () => {
     test("a mock can verify if an interaction has happend", async () => {
       const userRepository = new UserRepository();
-      const user = buildUser("12345678A");
+      const user = withRegularUser("12345678A");
 
       const userService = new UserService(userRepository);
       await userService.completeRegistration(user);
@@ -30,8 +30,8 @@ describe("Test doubles", () => {
     test("an stub can generate predefined data responses", async () => {
       const userRepository = new UserRepository();
       userRepository.findAll.mockResolvedValue([
-        buildRegisteredUser("1"),
-        buildUser("2"),
+        withRegisteredUser("1"),
+        withRegularUser("2"),
       ]);
 
       const userService = new UserService(userRepository);
