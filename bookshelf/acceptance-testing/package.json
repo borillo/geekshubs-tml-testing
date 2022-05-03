@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "cypress run",
+    "test": "cypress run --record --key 25a2c783-fca7-46b6-a8cf-bdd83f8ff4e9",
     "cypress": "cypress open"
   },
   "devDependencies": {
