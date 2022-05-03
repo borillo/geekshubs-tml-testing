@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   retrieveLibraryContents,
@@ -9,6 +9,21 @@ import Book from "../model/Book";
 
 import BookList from "./BookList";
 import NewBookForm from "./NewBookForm";
+
+export const BookshelfComponent = ({
+  books,
+  addBook,
+}: {
+  books: Book[];
+  addBook: (book: Book) => void;
+}) => (
+  <div className="bookshelf">
+    <h1>Bookshelf contents:</h1>
+
+    <BookList books={books} />
+    <NewBookForm onNewBook={addBook} />
+  </div>
+);
 
 const Bookshelf = () => {
   const [books, setBooks] = useState([] as Book[]);
@@ -21,14 +36,7 @@ const Bookshelf = () => {
     addBookToLibrary(book).then(() => setBooks([...books, book]));
   }
 
-  return (
-    <div className="bookshelf">
-      <h1>Bookshelf contents:</h1>
-
-      <BookList books={books} />
-      <NewBookForm onNewBook={addBook} />
-    </div>
-  );
+  return <BookshelfComponent books={books} addBook={addBook} />;
 };
 
 export default Bookshelf;

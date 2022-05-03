@@ -1,4 +1,3 @@
-import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -7,7 +6,7 @@ class BookshelfPageObject {
     render(component);
   }
 
-  fillForm(title: string, author: string) {
+  async fillForm(title: string, author: string) {
     userEvent.type(screen.getByLabelText(/title/i), title);
     userEvent.type(screen.getByLabelText(/author/i), author);
   }
