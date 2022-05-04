@@ -1,4 +1,4 @@
-name: users-service-mocks
+name: property-based-testing
 
 on:
   push:
