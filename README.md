@@ -1,0 +1,4 @@
+[![bookshelf](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/bookshelf.yml/badge.svg?branch=master)](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/bookshelf.yml)
+[![gilded-rose-kata-approval-testing](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/gilded-rose-kata-approval-testing.yml/badge.svg?branch=master)](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/gilded-rose-kata-approval-testing.yml)
+[![property-based-testing](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/property-based-testing.yml/badge.svg?branch=master)](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/property-based-testing.yml)
+[![users-service-mocks](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/users-service-mocks.yml/badge.svg?branch=master)](https://github.com/borillo/geekshubs-tml-testing/actions/workflows/users-service-mocks.yml)
