@@ -24,12 +24,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build and start frontend
+      - name: Build, test and start frontend
         run: |
           npm ci
           npm test
           npm start & npx wait-on http://localhost:3000
-        working-directory: ./bookshelf/frontend
+        working-directory: ./bookshelf/frontend-testing-library
         env:
           CI: true
 
