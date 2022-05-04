@@ -36,4 +36,7 @@ jobs:
       - name: Run acceptance tests
         uses: cypress-io/github-action@v2
         with:
+          record: true
           working-directory: ./bookshelf/acceptance-testing
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
