@@ -6,8 +6,8 @@ interface NewBookFormProps {
 }
 
 const NewBookForm = ({ onNewBook }: NewBookFormProps) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState("a");
+  const [author, setAuthor] = useState("b");
 
   return (
     <>

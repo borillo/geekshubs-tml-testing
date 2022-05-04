@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 class BookshelfPageObject {
@@ -7,8 +7,13 @@ class BookshelfPageObject {
   }
 
   async fillForm(title: string, author: string) {
-    userEvent.type(screen.getByLabelText(/title/i), title);
-    userEvent.type(screen.getByLabelText(/author/i), author);
+    const titleEl = screen.getByLabelText(/title/i);
+    userEvent.type(titleEl, title);
+    await waitFor(() => expect(titleEl).toHaveValue(title));
+
+    const authorEl = screen.getByLabelText(/author/i);
+    userEvent.type(authorEl, author);
+    await waitFor(() => expect(authorEl).toHaveValue(author));
   }
 
   submitForm() {
