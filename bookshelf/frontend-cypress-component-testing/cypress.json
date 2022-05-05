@@ -1,7 +1,8 @@
 {
   "coverage": true,
+  "video": false,
   "component": {
-    "testFiles": "**/*.spec.ct.{js,ts,jsx,tsx}",
+    "testFiles": "**/*.spec.{js,ts,jsx,tsx}",
     "componentFolder": "src",
     "viewportWidth": 1280,
     "viewportHeight": 1024

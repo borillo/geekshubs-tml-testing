@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import Book from "../model/Book";
 
-interface NewBookFormProps {
-  onNewBook: (book: Book) => void;
-}
-
-const NewBookForm = ({ onNewBook }: NewBookFormProps) => {
+const NewBookForm = ({ onNewBook }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
