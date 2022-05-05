@@ -46,7 +46,6 @@ jobs:
         with:
           record: true
           working-directory: ./bookshelf/frontend-cypress-component-testing
-          install: false
           command: npm run test:cypress:ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
