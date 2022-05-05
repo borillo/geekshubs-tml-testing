@@ -2,9 +2,9 @@ name: bookshelf
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 
@@ -38,5 +38,15 @@ jobs:
         with:
           record: true
           working-directory: ./bookshelf/acceptance-testing
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Run component tests
+        uses: cypress-io/github-action@v2
+        with:
+          record: true
+          working-directory: ./bookshelf/frontend-cypress-component-testing
+          install: false
+          command: npm run test:cypress:ci
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
