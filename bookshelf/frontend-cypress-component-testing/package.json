@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cypress run-ct",
     "eject": "react-scripts eject",
     "test:cypress": "cypress open-ct",
     "test:cypress:ci": "cypress run-ct --record --key 25a2c783-fca7-46b6-a8cf-bdd83f8ff4e9"
