@@ -35,6 +35,17 @@ describe("Bookshelf", () => {
     cy.contains(`${title} (${author})`);
   });
 
+  it("should allow to add new books", () => {
+    const title = fakeData.generateTitle();
+    const author = fakeData.generateAuthor();
+
+    const pageObject = new BookshelfPageObject(<Bookshelf />);
+    pageObject.fillForm(title, author);
+    pageObject.submitForm();
+
+    cy.contains(`${title} (${author})`);
+  });
+
   it("should allow to add new books - cy/rtl", () => {
     const title = fakeData.generateTitle();
     const author = fakeData.generateAuthor();

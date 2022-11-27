@@ -28,6 +28,7 @@ describe("property based tests", () => {
     fc.assert(
       fc.property(fc.nat(), (value) => {
         const sqrtValue = computeSqrt(value);
+
         expect(Math.round(sqrtValue ** 2)).toEqualRounded(value);
       })
     );

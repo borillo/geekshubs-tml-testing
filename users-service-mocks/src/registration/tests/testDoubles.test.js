@@ -1,5 +1,6 @@
 jest.mock("../repositories/userRepository");
 
+const { User } = require("../model/user");
 const { UserRepository } = require("../repositories/userRepository");
 const { UserService } = require("../services/userService");
 
@@ -9,17 +10,19 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
+const ANY_DNI = "ANY_DNI";
+
 describe("Test doubles", () => {
   describe("Mocks", () => {
     test("a mock can verify if an interaction has happend", async () => {
-      const userRepository = new UserRepository();
-      const user = withRegularUser("12345678A");
+      const userRepositoryMock = new UserRepository();
+      const user = withRegularUser(ANY_DNI);
 
-      const userService = new UserService(userRepository);
+      const userService = new UserService(userRepositoryMock);
       await userService.completeRegistration(user);
 
-      expect(userRepository.persist).toHaveBeenCalledTimes(1);
-      expect(userRepository.persist).toHaveBeenCalledWith({
+      expect(userRepositoryMock.persist).toHaveBeenCalledTimes(1);
+      expect(userRepositoryMock.persist).toHaveBeenCalledWith({
         dni: expect.any(String),
         registered: true,
       });
@@ -28,13 +31,13 @@ describe("Test doubles", () => {
 
   describe("Stubs", () => {
     test("an stub can generate predefined data responses", async () => {
-      const userRepository = new UserRepository();
-      userRepository.findAll.mockResolvedValue([
-        withRegisteredUser("1"),
-        withRegularUser("2"),
+      const userRepositoryStub = new UserRepository();
+      userRepositoryStub.findAll.mockResolvedValue([
+        withRegisteredUser(ANY_DNI),
+        withRegularUser(ANY_DNI),
       ]);
 
-      const userService = new UserService(userRepository);
+      const userService = new UserService(userRepositoryStub);
       const users = await userService.retrieveUnregisteredUsers();
 
       expect(users).toHaveLength(1);
