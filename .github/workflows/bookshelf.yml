@@ -34,7 +34,7 @@ jobs:
           CI: true
 
       - name: Run acceptance tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: true
           working-directory: ./bookshelf/acceptance-testing
@@ -42,7 +42,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Run component tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           record: true
           working-directory: ./bookshelf/frontend-cypress-component-testing
