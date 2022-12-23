@@ -5,6 +5,6 @@ export async function retrieveLibraryContents() {
   return findBooks();
 }
 
-export async function addBookToLibrary(book: ok) {
+export async function addBookToLibrary(book: Book) {
   addBook(book);
 }
