@@ -5,7 +5,7 @@ import {
   addBookToLibrary,
 } from "../services/BookshelfService";
 
-import Book from "../model/Book";
+import { Book } from "../model";
 
 import BookList from "./BookList";
 import NewBookForm from "./NewBookForm";
@@ -15,7 +15,7 @@ const Bookshelf = () => {
 
   useEffect(() => {
     retrieveLibraryContents().then((books) => setBooks(books));
-  }, [books]);
+  }, []);
 
   async function addBook(book: Book) {
     addBookToLibrary(book).then(() => setBooks([...books, book]));

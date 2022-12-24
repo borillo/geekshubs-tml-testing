@@ -1,10 +1,10 @@
 import React from "react";
-import "./index.css";
+import { createRoot } from "react-dom/client";
 
-import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-
 import Bookshelf from "./Bookshelf/components/Bookshelf";
+
+import "./index.css";
 
 const App = () => (
   <>
@@ -25,11 +25,18 @@ const App = () => (
   </>
 );
 
-ReactDOM.render(
+if (process.env.NODE_ENV === "development") {
+  const { worker } = require("./mocks/browser");
+  worker.start();
+}
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

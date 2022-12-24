@@ -1,5 +1,4 @@
-import React from "react";
-import Book from "../model/Book";
+import { Book } from "../model";
 import BookItem from "./BookItem";
 
 interface BookLisProps {

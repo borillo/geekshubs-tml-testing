@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Book from "../model/Book";
+import { useState } from "react";
+import { Book } from "../model";
 
 interface NewBookFormProps {
   onNewBook: (book: Book) => void;
