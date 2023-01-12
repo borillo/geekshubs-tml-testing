@@ -1,9 +1,23 @@
+/// <reference types="Cypress" />
+
+import React from "react";
 import App from "../../App";
 import Bookshelf from "../components/Bookshelf";
 
 import fakeData from "../pageobjects/BookshelfFakeData";
 import BookshelfPageObject from "../pageobjects/BookshelfPageObject";
 import BookshelfPageObjectRTL from "../pageobjects/BookshelfPageObjectRTL";
+
+import { mount } from "cypress/react";
+import "@testing-library/cypress";
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      mount: typeof mount;
+    }
+  }
+}
 
 describe("Main app", () => {
   it("should render the main menu", () => {

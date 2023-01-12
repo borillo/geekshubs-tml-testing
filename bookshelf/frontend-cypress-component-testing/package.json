@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "cypress run --config video=false --component",
+    "cypress": "cypress open --component",
     "preview": "vite preview"
   },
   "dependencies": {
