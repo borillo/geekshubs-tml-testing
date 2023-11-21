@@ -6,6 +6,6 @@ export default {
   },
 
   generateAuthor() {
-    return `${faker.name.firstName()} ${faker.name.lastName()}`;
+    return `${faker.person.firstName()} ${faker.person.lastName()}`;
   },
 };
