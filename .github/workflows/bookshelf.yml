@@ -26,7 +26,7 @@ jobs:
 
       - name: Build, test and start frontend
         run: |
-          npm ci
+          npm install
           npm test
           npm start & npx wait-on http://localhost:3000
         working-directory: ./bookshelf/frontend-testing-library
