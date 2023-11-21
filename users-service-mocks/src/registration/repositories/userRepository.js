@@ -3,11 +3,11 @@ class UserRepository {
 
   async persist(user) {
     throw new Error("Bomb!!");
-    return Promise.resolved(user);
+    return Promise.resolve(user);
   }
 
   async findAll() {
-    return Promise.resolved([]);
+    return Promise.resolve([]);
   }
 }
 
