@@ -14,13 +14,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -33,7 +33,7 @@ jobs:
         env:
           CI: true
 
-      - name: Run acceptance tests
+      - name: Run cypress acceptance tests
         uses: cypress-io/github-action@v4
         with:
           record: true
@@ -41,7 +41,14 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      - name: Run component tests
+      - name: Run playwright acceptance tests
+        run: |
+          npm install
+          npx playwright install --with-deps
+          npx playwright test
+        working-directory: ./bookshelf/acceptance-testing-playwright
+
+      - name: Run cypress component tests
         uses: cypress-io/github-action@v4
         with:
           record: true
