@@ -1,8 +1,10 @@
-import "@testing-library/jest-dom";
+import { expect, beforeAll, afterEach, afterAll } from "vitest";
+
+import { TextEncoder } from "util";
+
+global.TextEncoder = TextEncoder;
 
 import { server } from "./mocks/server";
-
-import expect from "expect";
 
 declare global {
   namespace jest {

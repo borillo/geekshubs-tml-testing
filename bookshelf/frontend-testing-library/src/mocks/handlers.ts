@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { Book } from "../Bookshelf/model";
 
 const books: Book[] = [
@@ -11,7 +11,7 @@ const books: Book[] = [
 ];
 
 export const handlers = [
-  rest.get("/books", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(books));
+  http.get("/books", () => {
+    return HttpResponse.json(books);
   }),
 ];

@@ -1,4 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { expect } from "vitest";
+
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 class BookshelfPageObject {
@@ -7,13 +9,11 @@ class BookshelfPageObject {
   }
 
   async fillForm(title: string, author: string) {
-    const titleEl = screen.getByLabelText(/title/i);
-    userEvent.type(titleEl, title);
-    await waitFor(() => expect(titleEl).toHaveValue(title));
+    userEvent.type(screen.getByLabelText(/title/i), title);
+    expect(await screen.findByDisplayValue(title)).toBeDefined();
 
-    const authorEl = screen.getByLabelText(/author/i);
-    userEvent.type(authorEl, author);
-    await waitFor(() => expect(authorEl).toHaveValue(author));
+    userEvent.type(screen.getByLabelText(/author/i), author);
+    expect(await screen.findByDisplayValue(author)).toBeDefined();
   }
 
   submitForm() {
