@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import * as fc from "fast-check";
 
 const computeSqrt = (value: number): number => {
