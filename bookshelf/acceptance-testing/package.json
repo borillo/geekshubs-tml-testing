@@ -7,11 +7,11 @@
     "cypress": "cypress open"
   },
   "devDependencies": {
-    "@applitools/eyes-cypress": "^3.40.0",
-    "cypress": "^13.5.1",
-    "typescript": "^5.3.2"
+    "@applitools/eyes-cypress": "^3.44.0",
+    "cypress": "^13.8.1",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.3.1"
+    "@faker-js/faker": "^8.4.1"
   }
 }
